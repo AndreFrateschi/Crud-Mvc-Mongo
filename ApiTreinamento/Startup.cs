@@ -39,9 +39,6 @@ namespace ApiTreinamento
                 c.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
             });
 
-
-
-
         }
         
 
