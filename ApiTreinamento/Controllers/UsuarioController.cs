@@ -50,44 +50,44 @@ namespace ApiTreinamento.Controllers
 
         }
 
-        [HttpPost]
-        public ActionResult Post([FromBody] PessoaViewModel pessoa)
-        {
-            _client = new MongoClient();
-            _database = _client.GetDatabase("admin");
-            var _collection = _database.GetCollection<Pessoa>("pessoaMongo");
+        //[HttpPost]
+        //public ActionResult Post([FromBody] PessoaViewModel pessoa)
+        //{
+        //    _client = new MongoClient();
+        //    _database = _client.GetDatabase("admin");
+        //    var _collection = _database.GetCollection<Pessoa>("pessoaMongo");
 
-            _collection.InsertOne<Pessoa>;
+        //    _collection.InsertOne<Pessoa>;
 
-            return Ok("Cadastrado realizado com sucesso!");
-        }
+        //    return Ok("Cadastrado realizado com sucesso!");
+        //}
 
-        [HttpPut]
-        public ActionResult Put([FromBody] UsuarioViewModel usuario)
-        {
-            _client = new MongoClient();
-            _database = _client.GetDatabase("admin");
-            var _collection = _database.GetCollection<Pessoa>("pessoaMongo");
+        //[HttpPut]
+        //public ActionResult Put([FromBody] UsuarioViewModel usuario)
+        //{
+        //    _client = new MongoClient();
+        //    _database = _client.GetDatabase("admin");
+        //    var _collection = _database.GetCollection<Pessoa>("pessoaMongo");
 
-            _collection.FindOneAndUpdate<Pessoa>
-                     (Builders<Pessoa>.Filter.Eq("nome", nomeDePesquisa), Builders<Pessoa>.Update.Set("nome", novaPessoa.nome).Set("cpf", novaPessoa.cpf).Set("senha", novaPessoa.senha));
-
-
-            return Ok("Alteração realizada com sucesso!");
-        }
-
-        [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
-        {
-            _client = new MongoClient();
-            _database = _client.GetDatabase("admin");
-            var _collection = _database.GetCollection<Pessoa>("pessoaMongo");
-
-            _collection.DeleteOne(s => s.cpf == cpfDePesquisaExclusao);
+        //    _collection.FindOneAndUpdate<Pessoa>
+        //             (Builders<Pessoa>.Filter.Eq("nome", nomeDePesquisa), Builders<Pessoa>.Update.Set("nome", novaPessoa.nome).Set("cpf", novaPessoa.cpf).Set("senha", novaPessoa.senha));
 
 
-            return Ok("Delecao realizada com sucesso!");
-        }
+        //    return Ok("Alteração realizada com sucesso!");
+        //}
+
+        //[HttpDelete("{id}")]
+        //public ActionResult Delete(int id)
+        //{
+        //    _client = new MongoClient();
+        //    _database = _client.GetDatabase("admin");
+        //    var _collection = _database.GetCollection<Pessoa>("pessoaMongo");
+
+        //    _collection.DeleteOne(s => s.cpf == cpfDePesquisaExclusao);
+
+
+        //    return Ok("Delecao realizada com sucesso!");
+        //}
 
 
 

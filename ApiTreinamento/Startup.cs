@@ -29,15 +29,15 @@ namespace ApiTreinamento
         {
             services.AddControllers();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Empresa X", Version = "v1", });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Empresa X", Version = "v1", });
 
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            //    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            //    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 
-                c.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
-            });
+            //    c.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
+            //});
 
         }
         
@@ -61,13 +61,13 @@ namespace ApiTreinamento
                 endpoints.MapControllers();
             });
 
-            app.UseSwagger();
+            //app.UseSwagger();
 
-            app.UseSwaggerUI(c =>
-            {
-                c.RoutePrefix = string.Empty;
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-            });
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.RoutePrefix = string.Empty;
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+            //});
 
         }
     }
